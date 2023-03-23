@@ -1,9 +1,8 @@
-import { styled, useTheme } from '@mui/joy';
-import JoyBreadcrumbs from '@mui/joy/Breadcrumbs';
 import ChevronRightCircle from 'icons/ChevronRightCircle';
-import JoyLink from '@mui/joy/Link';
+import { Anchor, Breadcrumbs as MantineBreadcrumbs, useMantineTheme } from '@mantine/core';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import styled from '@emotion/styled';
 
 interface IBreadcrumbsData {
   text: string;
@@ -14,12 +13,12 @@ type TBreadcrumbsProps = {
   data: IBreadcrumbsData[];
 };
 
-const StyledBreadcrumbs = styled(JoyBreadcrumbs)(() => ({
+const StyledBreadcrumbs = styled(MantineBreadcrumbs)(() => ({
   padding: 0,
 }));
 
 const Breadcrumbs = () => {
-  const theme = useTheme();
+  const theme = useMantineTheme();
 
   const router = useRouter();
   const linkPath = router.asPath.split('/');
@@ -32,13 +31,13 @@ const Breadcrumbs = () => {
   const breadcrumbs = [{ text: 'home', url: '/' }, ...pathArray];
 
   return (
-    <StyledBreadcrumbs separator={<ChevronRightCircle size={14} color={theme.vars.palette.neutral[500]} />}>
+    <MantineBreadcrumbs separator={<ChevronRightCircle size={14} color={theme.colors.gray[5]} />}>
       {breadcrumbs.map(({ text, url }) => (
-        <JoyLink component={Link} key={text} href={url} underline="hover" color="neutral">
+        <Anchor component={Link} key={text} href={url}>
           {text}
-        </JoyLink>
+        </Anchor>
       ))}
-    </StyledBreadcrumbs>
+    </MantineBreadcrumbs>
   );
 };
 

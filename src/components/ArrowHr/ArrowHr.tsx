@@ -1,4 +1,4 @@
-import { styled } from '@mui/joy';
+import styled from '@emotion/styled';
 
 const fontSize = '1.5em';
 
