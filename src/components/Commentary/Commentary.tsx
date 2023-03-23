@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { Box } from '@mantine/core';
+import { Box, BoxProps, createPolymorphicComponent } from '@mantine/core';
 
 type TCommentaryProps = {
   children: React.ReactNode;
@@ -11,7 +11,7 @@ const Commentary = ({ children }: TCommentaryProps) => {
 
 export default Commentary;
 
-const Wrapper = styled(Box)(({ theme }) => {
+const _Wrapper = styled(Box)(({ theme }) => {
   console.log(theme);
   return {
     // padding: theme.spacing(1),
@@ -24,3 +24,5 @@ const Wrapper = styled(Box)(({ theme }) => {
     },
   };
 });
+
+const Wrapper = createPolymorphicComponent<'div', BoxProps>(_Wrapper);

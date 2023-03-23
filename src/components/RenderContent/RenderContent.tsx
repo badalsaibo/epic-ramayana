@@ -1,4 +1,4 @@
-import { Stack, Typography } from '@mui/joy';
+import { Stack, Text } from '@mantine/core';
 import Commentary from 'components/Commentary';
 import HtmlTypography from 'components/HtmlTypography';
 import { SargaContentType, SargaContent } from 'interface/kanda';
@@ -13,7 +13,7 @@ const RenderContent = (props: RenderContentProps) => {
   if (type === 'conceptual') {
     return (
       <Stack>
-        <Typography>Conceptual</Typography>
+        <Text>Conceptual</Text>
         <HtmlTypography>{text}</HtmlTypography>
       </Stack>
     );

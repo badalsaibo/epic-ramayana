@@ -1,13 +1,16 @@
-import { Box, styled } from '@mui/joy';
+import styled from '@emotion/styled';
+import { Box, BoxProps, createPolymorphicComponent, rem } from '@mantine/core';
 import Breadcrumbs from 'components/Breadcrumbs';
 
 type TLayoutProps = {
   children: React.ReactNode;
 };
 
-const Container = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(2),
+const _Container = styled(Box)(() => ({
+  padding: rem('16px'),
 }));
+
+const Container = createPolymorphicComponent<'div', BoxProps>(_Container);
 
 const Layout = ({ children }: TLayoutProps) => {
   return (

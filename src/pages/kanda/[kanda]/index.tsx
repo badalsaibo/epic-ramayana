@@ -1,4 +1,4 @@
-import { Button, Divider, Grid, Stack, Typography } from '@mui/joy';
+import { Button, Divider, Grid, Stack, Text } from '@mantine/core';
 import { KANDAS } from 'constant/kanda';
 import { IChapters, TKanda } from 'interface/kanda';
 import { GetStaticPaths, GetStaticProps } from 'next';
@@ -21,17 +21,17 @@ const Kanda = ({ chapters }: TKandaProps) => {
   const { kanda } = router.query;
   return (
     <Stack spacing={2}>
-      <Typography level="h1">Chapters</Typography>
+      <Text>Chapters</Text>
       <Divider />
 
       <Stack>
-        <Grid container spacing={1}>
+        <Grid>
           {chapters.map(({ id, title, sarga }) => (
-            <Grid xs={2} key={id}>
+            <Grid.Col xs={2} key={id}>
               <Button variant="soft" fullWidth component={Link} href={`/kanda/${kanda}/${sarga}`}>
                 {sarga}
               </Button>
-            </Grid>
+            </Grid.Col>
           ))}
         </Grid>
       </Stack>
@@ -40,9 +40,9 @@ const Kanda = ({ chapters }: TKandaProps) => {
 
       <Stack spacing={1} sx={{ mt: 1 }}>
         {chapters.map(({ id, title, sarga }) => (
-          <Typography key={id} component={Link} href={`/kanda/${kanda}/${sarga}`} sx={{ textDecoration: 'none' }}>
+          <Text key={id} component={Link} href={`/kanda/${kanda}/${sarga}`} sx={{ textDecoration: 'none' }}>
             {sarga}.&nbsp;{title}
-          </Typography>
+          </Text>
         ))}
       </Stack>
     </Stack>
