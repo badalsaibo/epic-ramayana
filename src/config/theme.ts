@@ -9,8 +9,8 @@ const themeConfig: MantineThemeOverride = {
     },
     body: {
       maxWidth: '768px',
-      margin: '0 auto'
-    }
+      margin: '0 auto',
+    },
   }),
   fontFamily: `${body.style.fontFamily}, sans-serif`,
   // fontFamilyMonospace: 'Monaco, Courier, monospace',
@@ -22,6 +22,21 @@ const themeConfig: MantineThemeOverride = {
     lg: '2rem',
     xl: '3rem',
   },
+  colors: {
+    main: [
+      'hsl(220, 80%, 94%)',
+      'hsl(220, 80%, 90%)',
+      'hsl(220, 80%, 86%)',
+      'hsl(220, 80%, 77%)',
+      'hsl(230, 80%, 68%)',
+      'hsl(230, 80%, 59%)',
+      'hsl(230, 58%, 50%)',
+      'hsl(230, 80%, 41%)',
+      'hsl(230, 80%, 32%)',
+      'hsl(230, 80%, 23%)',
+    ],
+  },
+  primaryColor: 'main',
 };
 
 export default themeConfig;

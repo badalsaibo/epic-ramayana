@@ -28,7 +28,7 @@ const Kanda = ({ chapters }: TKandaProps) => {
         <Grid>
           {chapters.map(({ id, title, sarga }) => (
             <Grid.Col xs={2} key={id}>
-              <Button variant="soft" fullWidth component={Link} href={`/kanda/${kanda}/${sarga}`}>
+              <Button variant="light" fullWidth component={Link} href={`/kanda/${kanda}/${sarga}`}>
                 {sarga}
               </Button>
             </Grid.Col>
