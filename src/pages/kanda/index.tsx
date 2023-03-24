@@ -12,7 +12,7 @@ const Kanda = () => {
         <Grid>
           {KANDAS.map(({ kanda, url }) => (
             <Grid.Col key={kanda} xs={6}>
-              <Button component={Link} href={`/kanda${url}`}>
+              <Button component={Link} href={`/kanda${url}`} fullWidth variant="light">
                 {kanda}
               </Button>
             </Grid.Col>
